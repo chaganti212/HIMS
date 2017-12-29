@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "DoctorHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DoctorHome</h2>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="button" id="btndocprofile" class="btn btn-info btn-lg" onclick="docProfile()" value="Profile" />
+        <input type="button" id="btndochistory" class="btn btn-info btn-lg" onclick="docHistory()" value="Appointment History" />
+        @*<input type="button" id="btncheckAppointment" class="btn btn-info btn-lg" onclick="checkApp()" value="Check Appointments" />*@
+    </div>
+</div>
+<div id="DocHistory">
+
+</div>
+<div id="DocProfile">
+
+</div>
+
+<script>
+    function docHistory() {
+        $('#DocProfile').load('@Url.Action("DoctorHistory", "Hims")');
+    }
+    function docProfile() {
+        $('#DocProfile').load('@Url.Action("DoctorProfile", "Hims")');
+    }
+    @*function checkApp() {
+        alert("hel");
+        $('#DocProfile').load('@Url.Action("CheckAppointments", "Hims")');
+    }*@
+</script>

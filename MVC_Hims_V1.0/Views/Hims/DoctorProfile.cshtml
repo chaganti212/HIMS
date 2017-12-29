@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MVC_Hims_V1._0.Models.Staff>
+
+
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.StaffRole)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.SName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qualification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SGender)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.SUserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SPassword)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.StaffRole)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.SName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SGender)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.SUserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPassword)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StaffId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StaffId }) 
+        </td>
+    </tr>
+}
+
+</table>

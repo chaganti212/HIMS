@@ -1,0 +1,35 @@
+﻿@using MVC_Hims_V1._0.Models
+@model PatientviewModel
+@{
+    ViewBag.Title = "PatientHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PatientHome</h2>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="button" id="btnpatprofile" class="btn btn-info btn-lg" onclick="patprofile()" value="Profile" />
+        <input type="button" id="btnpathistory" class="btn btn-info btn-lg" onclick="pathistory()" value="Appointment History" />
+        <input type="button" id="btnAppointment" class="btn btn-info btn-lg" onclick="makeApp()" value="Make an Appointment" />
+    </div>
+</div>
+<div id="PatHistory">
+
+</div>
+<div id="PatProfile">
+
+</div>
+
+<script>
+    function pathistory() {
+        
+        $('#PatHistory').load('@Url.Action("Patienthistory", "Hims")');
+        
+    }
+    function patprofile() {
+        $('#PatHistory').load('@Url.Action("PatientProfile", "Hims")');
+    }
+    function makeApp() {
+        window.location.replace("http://localhost:53160/Hims/AppointmentDefault");
+    }
+</script>

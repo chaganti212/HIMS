@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVC_Hims_V1._0.Models.Appointment>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.PatId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatName)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model=>model.DoctorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OptStart)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.PatId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatName)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.DoctorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OptStart)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "AppointmentDefault", new { id=item.OptId }) |
+            
+            @Html.ActionLink("Delete", "Delete", new { id=item.OptId })
+        </td>
+    </tr>
+}
+
+</table>

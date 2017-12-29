@@ -1,0 +1,87 @@
+﻿@model IEnumerable<MVC_Hims_V1._0.Models.Patient>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PGender)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.PDignosisNum)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.PDob)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.StaffId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PGender)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.PDignosisNum)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.PDob)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.StaffId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DoctorId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PatId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PatId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PatId })
+        </td>
+    </tr>
+}
+
+</table>
